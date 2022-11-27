@@ -3,7 +3,7 @@ from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QColor
 import sys
-from random import randint
+from random import choice, randint
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -40,6 +40,8 @@ class Example(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.flag = False
+        self.colors = ['Red', 'Orange', 'Yellow', 'Green', 'Cyan',
+                       'Blue', 'Magenta', 'Purple', 'Brown', 'Black']
         self.pushButton.clicked.connect(self.run)
 
     def paintEvent(self, event):
@@ -57,9 +59,11 @@ class Example(QMainWindow, Ui_MainWindow):
         x = randint(70, 300)
         y = randint(70, 300)
         z = randint(70, 300)
-        self.qp.setBrush(QColor('Yellow'))
+        self.qp.setBrush(QColor(choice(self.colors)))
         self.qp.drawEllipse(720, 50, x, x)
+        self.qp.setBrush(QColor(choice(self.colors)))
         self.qp.drawEllipse(410, 250, y, y)
+        self.qp.setBrush(QColor(choice(self.colors)))
         self.qp.drawEllipse(100, 100, z, z)
 
 
