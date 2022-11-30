@@ -59,11 +59,9 @@ class Example(QMainWindow, Ui_MainWindow):
         x = randint(70, 300)
         y = randint(70, 300)
         z = randint(70, 300)
-        self.qp.setBrush(QColor(choice(self.colors)))
+        self.qp.setBrush(QColor('Yellow'))
         self.qp.drawEllipse(720, 50, x, x)
-        self.qp.setBrush(QColor(choice(self.colors)))
         self.qp.drawEllipse(410, 250, y, y)
-        self.qp.setBrush(QColor(choice(self.colors)))
         self.qp.drawEllipse(100, 100, z, z)
 
 
